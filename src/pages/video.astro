@@ -1,0 +1,142 @@
+---
+import Base from "@/layouts/Base.astro";
+import HeaderNav from "@/layouts/components/HeaderNav.astro";
+import { t, changeLanguage } from "i18next";
+
+changeLanguage("en");
+
+export const prerender = true;
+---
+
+<Base meta_title={t("stories.title")!} description={t("stories.description")!}>
+  <div>
+
+    <HeaderNav/>
+
+    <article
+      class="container w-full mx-auto font-normal prose prose-p:pt-3 dark:prose-invert"
+    >
+      <h1 class="text-center custom-gradient-text">{t("stories.highlight")}</h1>
+
+      <p set:html={t("stories.intro")} />
+
+      <h3>{t("stories.highQuality")}</h3>
+      <p>{t("stories.phighQuality")}</p>
+
+      <h3>{t("stories.friendly")}</h3>
+      <p set:html={t("stories.phfriendly")} />
+
+      <h3>{t("stories.required")}</h3>
+      <p set:html={t("stories.prequired")} />
+
+      <h3>{t("stories.compatible")}</h3>
+      <p set:html={t("stories.pcompatible")} />
+
+      <h2>{t("stories.howtouse")}</h2>
+
+      <p set:html={t("stories.phowtouse")} />
+
+      <div class="flex items-center justify-center">
+        <div
+          class="flex flex-col items-center rounded-sm shadow-sm"
+          style="margin: -0.5rem 1.5px; max-width: 280px; width: 100%;"
+        >
+          <img
+            src="/images/copy-the-story-url.webp"
+            alt="click on the 3 dots and get the url"
+            loading="lazy"
+            class="w-full p-0 bg-transparent rounded-lg"
+            style="width: 100%; height: auto; max-width: 100%; box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);"
+          />
+        </div>
+        <div
+          class="flex flex-col items-center rounded-sm shadow-sm"
+          style="margin: -0.5rem 1.5px; max-width: 280px; width: 100%;"
+        >
+          <img
+            src="/images/paste-the-story-url.webp"
+            alt="copy the url from the reels"
+            loading="lazy"
+            class="w-full p-0 bg-transparent rounded-lg"
+            style="width: 100%; height: auto; max-width: 100%; box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);"
+          />
+        </div>
+        <div
+          class="flex flex-col items-center rounded-sm shadow-sm"
+          style="margin: -0.5rem 1.5px; max-width: 280px; width: 100%;"
+        >
+          <img
+            src="/images/Done-now-download-story.webp"
+            alt="after the process click on download reels"
+            loading="lazy"
+            class="w-full p-0 bg-transparent rounded-lg"
+            style="width: 100%; height: auto; max-width: 100%; box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);"
+          />
+        </div>
+      </div>
+
+      <ol>
+        <li>{t("stories.1step")}</li>
+        <li>{t("stories.2step")}</li>
+        <li>{t("stories.3step")}</li>
+        <li>{t("stories.4step")}</li>
+      </ol>
+      <div class="app-box">
+        <div class="app-box__info">
+          <div class="app-box__title">Download with app SnapTik</div>
+          <p class="p-0 m-0">
+            We now provide an app for Instagram video Download. It is fast,
+            easy, with no watermark and HD quality
+          </p>
+        </div>
+        <div class="app-link">
+          <a
+            href="https://play.google.com/store/apps/details?id=com.snaptik.app.snaptik.snaptick10"
+            class="app-box__icon"
+            target="_blank"
+            ><img
+              src="https://snapinsta.app/public/svg/google_play.svg"
+              width="163"
+              height="48"
+              alt="Download app"
+            /></a
+          >
+          <a
+            href="https://apps.apple.com/app/svideo/id6461307222"
+            class="app-box__icon"
+            target="_blank"
+            ><img
+              src="https://snapinsta.app/public/svg/app-store.svg"
+              width="143.6px"
+              height="48"
+              alt="Download app"
+            /></a
+          >
+        </div>
+      </div>
+      <div>
+        <h2>{t("stories.faq.title")}</h2>
+        {
+          (
+            t("stories.faq.questions", {
+              returnObjects: true,
+            }) as []
+          ).map((answer: any, question) => (
+            <div class="p-2 text-white">
+              <div class="text-white collapse bg-base-200 collapse-arrow btn-accordion">
+                <input type="checkbox" class="w-full" aria-label="faq"/>
+                <div class="font-medium text-md collapse-title">
+                  {answer.question}
+                </div>
+                <div class="collapse-content">
+                  <p set:html={answer.answer} />
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </article>
+  </div>
+</Base>
+

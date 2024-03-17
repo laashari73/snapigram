@@ -1,0 +1,81 @@
+---
+import Base from "@/layouts/Base.astro";
+import IndexHome from "@/layouts/ScreensReact";
+import { t, changeLanguage } from "i18next";
+
+changeLanguage("en");
+
+export const prerender = true;
+---
+
+<Base meta_title={t("reels.title")!} description={t("reels.description")!}>
+  <div
+    class="container max-w-4xl font-normal prose lg:prose-xl prose-p:pt-3 dark:prose-invert"
+  >
+    <IndexHome client:only />
+    <div class="container max-w-4xl font-normal prose lg:prose-xl prose-p:pt-3 dark:prose-invert">
+      
+    </div>
+    <article>
+      <h1 class="text-center custom-gradient-text">{t("reels.highlight")}</h1>
+      <article>
+        <p set:html={t("reels.intro")}></p>
+        
+        <h3>{t("reels.highQuality")}</h3>
+            <p set:html= {t("reels.phighQuality")}></p>
+  
+        <h3>{t("reels.friendly")}</h3>
+          <p set:html={t("reels.phfriendly")}></p>
+  
+        <h3>{t("reels.required")}</h3>
+          <p set:html={t("reels.prequired")}></p>
+  
+  
+   <h2>{t("reels.howtouse")}</h2>
+   <p set:html={t("reels.phowtouse")}></p>
+
+   <div class='flex items-center justify-center'>
+    <div class='flex flex-col items-center rounded-sm shadow-sm' style='margin: -0.5rem 1.5px; max-width: 280px; width: 100%;'>
+      <img src='/images/click-on-3-dot-for-reels.webp' alt='click on the 3 dots and get the url' loading='lazy' class='w-full p-0 bg-transparent rounded-lg' style='width: 100%; height: auto; max-width: 100%; box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);' />
+    </div>
+    <div class='flex flex-col items-center rounded-sm shadow-sm' style='margin: -0.5rem 1.5px; max-width: 280px; width: 100%;'>
+      <img src='/images/copy-reels-url-done.webp' alt='copy the url from the reels' loading='lazy' class='w-full p-0 bg-transparent rounded-lg' style='width: 100%; height: auto; max-width: 100%; box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);' />
+    </div>
+    <div class='flex flex-col items-center rounded-sm shadow-sm' style='margin: -0.5rem 1.5px; max-width: 280px; width: 100%;'>
+      <img src='/images/paste-the-reel-url.webp' alt='after the process click on download reels' loading='lazy' class='w-full p-0 bg-transparent rounded-lg' style='width: 100%; height: auto; max-width: 100%; box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);' />
+    </div>
+  </div>
+  
+   
+
+  
+   <ol>
+    <li>{t("reels.1step")}</li>
+    <li>{t("reels.2step")}</li>
+    <li>{t("reels.3step")}</li>
+    <li>{t("reels.4step")}</li>
+  </ol>
+    
+        <div>
+          <h2>{t("reels.faq.title")}</h2>
+          {
+            (
+              t("reels.faq.questions", {
+                returnObjects: true,
+              }) as []
+            ).map((answer: any, question) => (
+              <div class="p-2">
+              <div class="text-white collapse bg-base-200 collapse-arrow btn-accordion">
+                  <input type="checkbox" class="w-full" aria-label="faq"/>
+                  <div class="font-medium text-md collapse-title">
+                    {answer.question}
+                  </div>
+                  <div class="collapse-content"><p set:html={answer.answer}></p></div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+    </article>
+  </div>
+</Base>

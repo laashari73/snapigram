@@ -1,0 +1,108 @@
+---
+import Base from "@/layouts/Base.astro";
+import IndexHome from "@/layouts/ScreensReact";
+import { t, changeLanguage } from "i18next";
+import HeaderNav from "@/layouts/components/HeaderNav.astro";
+
+changeLanguage("en");
+
+export const prerender = true;
+---
+
+<Base meta_title={t("profile.title")!} description={t("profile.description")!}>
+  <div
+  >
+    <HeaderNav  />
+
+    <article
+      class="container w-full mx-auto font-normal prose prose-p:pt-3 dark:prose-invert"
+    >
+      <h1 class="text-center custom-gradient-text">{t("profile.highlight")}</h1>
+      <p set:html={t("profile.intro")} />
+
+      <h3>{t("profile.highQuality")}</h3>
+      <p set:html={t("profile.phighQuality")} />
+
+      <h3>{t("profile.friendly")}</h3>
+      <p set:html={t("profile.phfriendly")} />
+
+      <h3>{t("profile.required")}</h3>
+      <p set:html={t("profile.prequired")} />
+
+      <h3>{t("profile.compatible")}</h3>
+      <p set:html={t("profile.pcompatible")} />
+
+      <h2>{t("profile.howtouse")}</h2>
+      <p set:html={t("profile.phowtouse")} />
+
+      <div class="flex items-center justify-center">
+        <div
+          class="flex flex-col items-center rounded-sm shadow-sm"
+          style="margin: -0.5rem 1.5px; max-width: 280px; width: 100%;"
+        >
+          <img
+            src="/images/copy-the-IGprofile-URL.webp"
+            alt="copy the profile url"
+            loading="lazy"
+            class="w-full p-0 bg-transparent rounded-lg"
+            style="width: 100%; height: auto; max-width: 100%; box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);"
+          />
+        </div>
+        <div
+          class="flex flex-col items-center rounded-sm shadow-sm"
+          style="margin: -0.5rem 1.5px; max-width: 280px; width: 100%;"
+        >
+          <img
+            src="/images/paste-the-IG-profile-url.webp"
+            alt="paste your profile IG url"
+            loading="lazy"
+            class="w-full p-0 bg-transparent rounded-lg"
+            style="width: 100%; height: auto; max-width: 100%; box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);"
+          />
+        </div>
+        <div
+          class="flex flex-col items-center rounded-sm shadow-sm"
+          style="margin: -0.5rem 1.5px; max-width: 280px; width: 100%;"
+        >
+          <img
+            src="/images/IG-profile-download-done.webp"
+            alt="after the process click on download Dp"
+            loading="lazy"
+            class="w-full p-0 bg-transparent rounded-lg"
+            style="width: 100%; height: auto; max-width: 100%; box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);"
+          />
+        </div>
+      </div>
+
+      <ol>
+        <li>{t("profile.1step")}</li>
+        <li>{t("profile.2step")}</li>
+        <li>{t("profile.3step")}</li>
+        <li>{t("profile.4step")}</li>
+      </ol>
+
+      <div>
+        <h2>{t("profile.faq.title")}</h2>
+        {
+          (
+            t("profile.faq.questions", {
+              returnObjects: true,
+            }) as []
+          ).map((answer: any, question) => (
+            <div class="p-2">
+              <div class="text-white collapse bg-base-200 collapse-arrow btn-accordion">
+                <input type="checkbox" class="w-full" aria-label="faq" />
+                <div class="font-medium text-md collapse-title">
+                  {answer.question}
+                </div>
+                <div class="collapse-content">
+                  <p set:html={answer.answer} />
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </article>
+  </div>
+</Base>
