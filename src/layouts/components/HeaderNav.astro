@@ -1,0 +1,145 @@
+---
+import { localizePath } from "astro-i18next";
+import IndexHome from "@/layouts/ScreensReact";
+const { heading } = Astro.props;
+---
+
+<div class="downloader">
+  <ul
+    class="flex items-center justify-around max-w-3xl px-1 py-3 m-auto text-sm font-semibold text-black hero-tools">
+    <li>
+      <a href={localizePath("/")}
+        ><div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-8 h-8 p-1 m-auto border border-gray-200 rounded-md stroke-blue-400"
+            fill="none"
+            viewBox="0 0 24 24"
+            ><path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"
+            ></path></svg
+          ><span>Reels</span>
+        </div></a
+      >
+    </li>
+    <!-- <li>
+      <a href="/hashtag-finder"
+        ><div class="relative">
+          <svg
+            class="w-8 h-8 p-1 m-auto border border-gray-200 rounded-md stroke-pink-600"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            ><path
+              d="M10 3 6 21M18 3l-4 18M4 8h17M3 16h17"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path></svg
+          ><span>Hashtag</span>
+        </div></a
+      >
+    </li> -->
+    <li>
+      <a href={localizePath("/stories")}
+        ><div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-8 h-8 p-1 m-auto border border-gray-200 rounded-md stroke-green-500"
+            fill="none"
+            viewBox="0 0 24 24"
+            ><path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+            ></path><path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg
+          ><span>Stories</span>
+        </div></a
+      >
+    </li>
+    <li>
+      <a
+        class="hover:text-fuchsia-100 dark:hover:text-fuchsia-200"
+        href={localizePath("/profile")}
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-8 h-8 p-1 m-auto border border-gray-200 rounded-md stroke-blue-400"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          ><path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 5.879 1.804M15 10a3 3 0 11-5 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+          ></path></svg
+        ><span>Profile</span></a
+      >
+    </li><li>
+      <a
+      href={localizePath("/audio")}
+        ><div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-8 h-8 p-1 m-auto border border-gray-200 rounded-md stroke-cyan-500"
+            fill="none"
+            viewBox="0 0 24 24"
+            ><path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"
+            ></path></svg
+          ><span>Audio</span>
+        </div></a
+      >
+    </li><li>
+      <a 
+      href={localizePath("/photo")}
+        ><div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-8 h-8 p-1 m-auto border border-gray-200 rounded-md stroke-purple-500"
+            fill="none"
+            viewBox="0 0 24 24"
+            ><path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-5-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+            ></path></svg
+          ><span>Photo</span>
+        </div></a
+      >
+    </li><li>
+      <a 
+      href={localizePath("/video")}
+        ><div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-8 h-8 p-1 m-auto border border-gray-200 rounded-md stroke-amber-500"
+            fill="none"
+            viewBox="0 0 24 24"
+            ><path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
+            ></path></svg
+          ><span>Video</span>
+        </div></a
+      >
+    </li>
+  </ul>
+  
+
+  <IndexHome client:only />
+</div>
+
