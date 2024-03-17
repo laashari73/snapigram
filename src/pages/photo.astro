@@ -28,33 +28,20 @@ export const prerender = true;
 		
 			<center>
 			<div class="lg:col-7 md:col-9 mb-8 text-center">
-				<h1 class="text-center" style="font-size:1.75rem; font-weight:500">{t("videos.title")}</h1>
-				<p class="mb-8 text-lg" style="font-size:1rem; font-weight:normal">{t("videos.support")}</p> 
+				<h1 class="text-center" style="font-size:1.75rem; font-weight:500">{t("photo.phototitle")}</h1>
+				<p class="mb-8 text-lg" style="font-size:1rem; font-weight:normal">{t("photo.highlight")}</p> 
 			</div>
 			</center>
-
-			<div class="row items-center"> 
-				<div class="mb:md-0 mb-6 md:col-5 false"> 
-				<img src="/images/instagram-video.webp" alt="Instagram video downloader" decoding="async" width="520" height="480">
-				</div>
- 
-			<div class="md:col-7 lg:col-6 false"> 
-				<h2 class="mb-4" style="font-size:1.5rem; font-weight:600"><a href={`/video`}> {t("videos.igvDown")}</a></h2> 
-				<p class="mb-8 text-lg" style="font-size:1rem; font-weight:normal">{t("videos.secVideo")}</p> 
-				<p class="mb-8 text-lg" style="font-size:1rem; font-weight:normal">{t("videos.secVideo2")}</p> 
-			</div>
-
-			</div>
-			<br/>
+			<div class="row items-center">
+			<p class="mb-8 text-lg" style="font-size:1rem; font-weight:normal">{t("photo.toptext")}</p> 
 
 
-			<div class="row items-center"> 
 				<div class="mb:md-0 mb-6 md:col-5 md:order-2"> 
 				<img src="/images/instagram-photo-downloader.webp" alt="Instagram photo downloader" decoding="async" width="520" height="480">
 				</div> 
 
 			<div class="md:col-7 lg:col-6 md:order-1"> 
-				<h2 class="mb-4" style="font-size:1.5rem; font-weight:600"><a href={`/photo`}> {t("photo.igpDown")}</a></h2> 
+				<h2 class="mb-4" style="font-size:1.5rem; font-weight:600"><a href={`/instagram-photo-download`}> {t("photo.igpDown")}</a></h2> 
 				<p class="mb-8 text-lg" style="font-size:1rem; font-weight:normal">{t("photo.secPhoto")}</p> 
 				<p class="mb-8 text-lg" style="font-size:1rem; font-weight:normal">{t("photo.secPhoto2")}</p> 
 			</div> 
